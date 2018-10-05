@@ -1,39 +1,43 @@
-$fn=50;
+include <tools.scad>;
 
-basis=10; //distance between holes
-diam=4.5; //hole diameter
-gap=0.01; //placement gap
+module basicHole() {
+  circle(d=diam);
+}
 
-module body(sizex, sizey) {
+module holeGrid(sizex, sizey) {
+  for (x = [0:sizex-1]) {
+    translate([0,units(x)])
+      for (y=[0:sizey-1]) {
+        translate([y*basis+halfUnit(),halfUnit()]) basicHole();
+      }
+  }
+}
+
+module squarePlot(sizex, sizey) {
+  square([units(sizey), units(sizex)]);    
+}
+
+module basicPanel(sizex, sizey) {
   difference() {  
-      for (x = [0:sizex-1]) {
-        translate([0,x*basis])
-        for (y= [0:sizey-1]) {
-          difference() {
-            translate([y*basis,0]) square(basis, basis);
-            translate([y*basis+basis/2,basis/2]) circle(d=diam);
-          }
-        };
-    }
+     squarePlot(sizex,sizey);
+     holeGrid(sizex,sizey); 
   }
 }
 
 module chamfer(type){
   rotate(90*type)
     difference() {  
-      square(basis/2);
-      translate([basis/2,basis/2]) circle(d=basis);  
+      square(halfUnit());
+      translate([halfUnit(),halfUnit()]) circle(d=basis);  
     }
 }
 
 module roundedPanel(sizex, sizey) {
-  difference() {  
-    body(sizex,sizey);
-    translate([0,0])                     chamfer(0);
-    translate([basis*sizey,0])           chamfer(1);
-    translate([basis*sizey,basis*sizex]) chamfer(2);
-    translate([0,basis*sizex])           chamfer(3);      
+  difference() {
+    basicPanel(sizex,sizey);
+    translate([0,0])                       chamfer(0);
+    translate([units(sizey),0])            chamfer(1);
+    translate([units(sizey),units(sizex)]) chamfer(2);
+    translate([0,units(sizex)])            chamfer(3);      
   }
 }
-
-roundedPanel(sizex,sizey);
