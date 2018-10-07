@@ -1,5 +1,6 @@
-include <panel.scad>;
-include <wheel.scad>;
+include <../MCAD/meccano_compatibility.scad>;
+
+$fn=50;
 
 if (defined(panel))
   roundedPanel(panel[0],panel[1]);

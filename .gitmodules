@@ -1,0 +1,5 @@
+[submodule "parts/MCAD"]
+	path = parts/MCAD
+	url = https://github.com/shadowlamer/MCAD.git
+	branch = dev
+
