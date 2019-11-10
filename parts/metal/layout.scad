@@ -6,6 +6,7 @@ function defined(a) = str(a) != "undef";
 
 if (defined(panel))
   rounded_panel(panel[0],panel[1]);
-else
-if (defined(wheel))
+else if (defined(wheel))
   wheel(wheel);
+else if (defined(angle))
+  angle(angle);

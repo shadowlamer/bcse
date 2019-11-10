@@ -15,6 +15,12 @@ openscad parts/metal/layout.scad -D wheel=5 -o wheel_r5.dxf
 ```
 <img src="https://raw.githubusercontent.com/shadowlamer/bcse/master/docs/images/wheel_r5.png" height="100"/>
 
+or
+```
+openscad parts/metal/layout.scad -D angle=5 -o angle_5.dxf 
+```
+<img src="https://raw.githubusercontent.com/shadowlamer/bcse/master/docs/images/angle_5.png" height="100"/>
+
 ## Used software
 
 1. [OpenSCAD](http://www.openscad.org/) - The Programmers Solid 3D CAD Modeller. 
