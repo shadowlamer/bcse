@@ -72,7 +72,8 @@ openscad parts/metal/part.scad -D 'part=["ppanel", [1,5]]' -o ppanel_1x5.dxf
 
 ### More precise nesting
 
-Use [Deepnwst.io](https://deepnest.io/). It works.
+Use [Deepnest.io](https://deepnest.io/). It works.
+
 <img src="https://raw.githubusercontent.com/shadowlamer/bcse/master/docs/images/tiny-nested.png" height="100"/>
 
 
