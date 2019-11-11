@@ -1,5 +1,8 @@
 # Best Construction Set Ever
 
+I'm trying to reinvent construction set with nuts and bolts. Metal and plastic parts will be here. 
+Electronic parts can be found [here](https://easyeda.com/shadowlamer/BCSE).
+
 ## Prerequisites
 
 1. [OpenSCAD](http://www.openscad.org/) - The Programmers Solid 3D CAD Modeller. 
@@ -66,8 +69,6 @@ openscad parts/metal/part.scad -D 'part=["ppanel", [1,5]]' -o ppanel_1x5.dxf
 <img src="https://raw.githubusercontent.com/shadowlamer/bcse/master/docs/images/ppanel_1x5.png" height="100"/>
 
 #### Sets creation
-
-
 
 ### More precise nesting
 
