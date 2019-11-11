@@ -1,27 +1,75 @@
 # Best Construction Set Ever
 
+## Prerequisites
+
+1. [OpenSCAD](http://www.openscad.org/) - The Programmers Solid 3D CAD Modeller. 
+
+## Installation
+
+```
+git clone https://github.com/shadowlamer/bcse.git
+git submodule init
+git submodule update
+```
+
 ## Metal parts
 
 ### Blueprints building
 
+#### Quick Start
+
 ```
-openscad parts/metal/layout.scad -D panel=[3,4] -o panel_3x4.dxf 
+openscad parts/metal/tiny.scad -o tiny.dxf 
+```
+or
+```
+openscad parts/metal/starter.scad -o starter.dxf 
+```
+
+#### Single part blueprints
+
+##### Available parts
+
+###### Panel
+
+```
+openscad parts/metal/part.scad -D 'part=["panel", [3,4]]' -o panel_3x4.dxf 
 ```
 <img src="https://raw.githubusercontent.com/shadowlamer/bcse/master/docs/images/panel_3x4.png" height="100"/>
 
-or
+###### Wheel
+
 ```
-openscad parts/metal/layout.scad -D wheel=5 -o wheel_r5.dxf 
+openscad parts/metal/layout.scad -D 'part=["wheel", [5]]' -o wheel_r5.dxf 
 ```
 <img src="https://raw.githubusercontent.com/shadowlamer/bcse/master/docs/images/wheel_r5.png" height="100"/>
 
-or
+###### Angle
+
 ```
-openscad parts/metal/layout.scad -D angle=5 -o angle_5.dxf 
+openscad parts/metal/layout.scad -D 'part=["angle", [5]]' -o angle_5.dxf 
 ```
 <img src="https://raw.githubusercontent.com/shadowlamer/bcse/master/docs/images/angle_5.png" height="100"/>
 
-## Used software
+###### Angled panel
 
-1. [OpenSCAD](http://www.openscad.org/) - The Programmers Solid 3D CAD Modeller. 
+```
+openscad parts/metal/layout.scad -D 'part=["apanel", [5,5]]' -o apanel_5x5.dxf 
+```
+<img src="https://raw.githubusercontent.com/shadowlamer/bcse/master/docs/images/apanel_5x5.png" height="100"/>
+
+###### PI-shaped panel
+
+```
+openscad parts/metal/layout.scad -D 'part=["ppanel", [1,5]]' -o ppanel_1x5.dxf 
+```
+<img src="https://raw.githubusercontent.com/shadowlamer/bcse/master/docs/images/ppanel_1x5.png" height="100"/>
+
+#### Sets creation
+
+
+
+### More precise nesting
+
+Use [Deepnwst.io](https://deepnest.io/). It works.
 
